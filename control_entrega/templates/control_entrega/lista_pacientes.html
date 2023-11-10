@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+
+{% block contenido %}
+<h1>Listado de Pacientes</h1>
+<a href="{% url 'lista_pacientes' %}">Ver todos</a>
+<a href="{% url 'agregar_paciente' %}">Agregar Paciente</a>
+<br><br>
+
+<br>
+<ul>
+{% for paciente in pacientes %}
+  <li>
+    {{ paciente.nombre }}, {{ paciente.apellido }}, {{ paciente.edad }}, {{ paciente.historial_medico }}
+  </li>
+{% endfor %}
+</ul>
+{% endblock contenido %}
